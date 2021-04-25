@@ -21,19 +21,10 @@
 </template>
 
 <script>
-  import { onMounted } from 'vue'
-  import { request } from 'network/request'
+  // import { onMounted } from 'vue'
+  // import { request } from 'network/request'
   export default{
     setup(){
-      onMounted(()=>{
-          request({
-            url:'/api/index'
-          }).then(res => {
-            console.log(res);
-          }).catch(err => {
-            console.log(err);
-          })
-      })
     }
   }
 </script>
