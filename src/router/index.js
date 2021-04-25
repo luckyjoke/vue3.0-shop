@@ -3,7 +3,7 @@ const Home = () => import ("views/home/Home")
 const Category = () => import ("views/category/Category")
 const ShopCart = () => import ("views/shopcart/ShopCart")
 const User = () => import ("views/user/User")
-
+const Details = () => import("views/details/Details")
 const routes = [
 	{
 		path: '',
@@ -38,6 +38,13 @@ const routes = [
 		component: User,
 		meta:{
 			title: 'N7wQ-个人中心'
+		}		
+	},
+	{
+		path: '/details',
+		component: Details,
+		meta:{
+			title: 'N7wQ-商品详情'
 		}		
 	},	
 ]
