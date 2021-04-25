@@ -7,7 +7,6 @@
 		</nav-bar>
 
 		<div class="banners">
-			<img src="~/assets/images/bannerImg.jpg">
 		</div>
 
 		<recommend-view :recommends='recommends'></recommend-view>		
