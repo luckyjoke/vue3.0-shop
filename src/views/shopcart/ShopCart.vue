@@ -2,7 +2,8 @@
 	<nav-bar>
 		<template v-slot:default>购物车</template>
 	</nav-bar>
-	<div>购物车</div>
+	<div>	
+	</div>
 </template>
 
 <script>
