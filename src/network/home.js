@@ -11,3 +11,4 @@ export function getHomeGoods(type='sales' ,page=1){
 		url: '/api/index?'+type+'=1&page'+page
 	})
 }
+
