@@ -93,7 +93,7 @@
 					pullUpLoad: true //上拉加载更多	
 				});
 
-				//导航栏固定
+				//导航栏和回到顶部出现固定
 				scroll.on('scroll',(pos)=>{
 					isBackTop.value = isTabShow.value = (-pos.y) > tabRef.value.offsetHeight
 				})

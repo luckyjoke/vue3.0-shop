@@ -15,11 +15,9 @@
 
 
 		<van-sidebar v-model="activeKey" class="leftmenu">	
-			<van-collapse v-model="menuactiveName" accordion>
+			<van-collapse v-model="activeName" accordion>
 				<van-collapse-item :title="item.name" :name="item.name" v-for='item in categories' :key='item.id'>
-					
 						<van-sidebar-item :title="second.name" v-for='second in item.children' :key='second.id' @click='getGoodsByLmenu(second.id)'/>
-									
 				</van-collapse-item>
 			</van-collapse>
 		</van-sidebar>		
@@ -35,6 +33,7 @@
 					:title="item.title"
 					:thumb="item.cover_url"
 					:lazy-load='true'
+					@click = 'itemClick(item.id)'
 				/>				
 			</div>
 		</div>
@@ -48,7 +47,8 @@
 	import NavBar from 'components/common/navbar/NavBar'
 	import BackTop from 'components/common/backtop/BackTop'	
 	import { getCategoryDate , getCategoryGoods} from 'network/category'
-	import { ref , onMounted , reactive , computed , watchEffect , nextTick} from 'vue'
+	import { ref , onMounted , reactive , computed , watchEffect , nextTick } from 'vue'
+	import { useRouter } from 'vue-router'
 	import BScroll from 'better-scroll' 
 
 	export default{
@@ -56,7 +56,7 @@
 
 			const active = ref(2)
 			const activeKey = ref(0)
-			const menuactiveName = ref('1')
+			const activeName = ref('1')
 
 			// 当前选择的排序方式
 			const currentOrder = ref('sales')
@@ -148,19 +148,22 @@
 			const getGoodsByLmenu = (id) => {
 				currentCid.value = id
 				init()
-				console.log(goods)
-				console.log(currentOrder.value)
-				console.log(currentCid.value)				
 			}
 
 			const bTop = () => {
 				scroll.scrollTo(0 , 0 ,500)
 			}
+
+			// 点击商品卡片触发跳转到商品详情
+			const router = useRouter()
+			const itemClick = (id) => {
+				router.push({path:`/details`, query:{id}})
+			}
 			return{
 				activeKey,
 				categories,
 				active,
-				menuactiveName,
+				activeName,
 				tabClick,
 				getGoodsByLmenu,
 				currentOrder,
@@ -168,7 +171,8 @@
 				showGoods,
 				scroll,
 				isBackTop,
-				bTop
+				bTop,
+				itemClick
 			}
 		},
 		components:{
