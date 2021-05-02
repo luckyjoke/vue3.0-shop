@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Notify } from 'vant'
 
 export function request(config) {
 	const instance = axios.create({
@@ -22,8 +23,8 @@ export function request(config) {
 		return res.data ? res.data : res;
 	} , err => {
 		// 如果有错误会处理
-		console.log(err)
-
+		Notify({type: 'warning' ,
+			message: err.response.data.errors[Object.keys(err.response.data.errors)[0]][0]})
 	})
 
 

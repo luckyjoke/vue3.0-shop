@@ -54,8 +54,6 @@
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
-					margin-bottom: 3px;
-
 				}
 				.price{
 					color: red;

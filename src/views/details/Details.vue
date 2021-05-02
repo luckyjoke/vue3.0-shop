@@ -25,12 +25,26 @@
 				<van-button  type="warning">加入购物车</van-button>
 				<van-button type="danger">立即购买</van-button>
 			</template>
-		</van-card>				
+		</van-card>
+		<van-tabs v-model:active="active">
+			<van-tab title="概述">
+				<div v-html='detail.details'></div>
+			</van-tab>
+			<van-tab title="热评">
+				<div>
+					<h3>暂无评论～～</h3>
+				</div>
+			</van-tab>
+			<van-tab title="相关图书">
+				<GoodsList :goods='like_goods'></GoodsList>
+			</van-tab>
+		</van-tabs>
 	</div>
 </template>
 
 <script>
 	import NavBar from 'components/common/navbar/NavBar'
+	import GoodsList from 'components/content/goods/GoodsList'	
 	import { getDetail } from 'network/detail'
 	import {  ref , onMounted , reactive , toRefs} from 'vue'
 	import { useRoute } from 'vue-router'
@@ -39,12 +53,13 @@
 		setup(){
 			const route = useRoute()
 			const goodId = ref(0)
+			let active = ref(0)
 			goodId.value = route.query.id
 
 			// 商品详情数据模型
 			const book = reactive({
 				detail:{},
-				like_goods: []
+				like_goods: [],
 			})
 			onMounted(()=>{
 
@@ -65,11 +80,13 @@
 			return{
 				goodId,
 				...toRefs(book),
-				openImage
+				openImage,
+				active
 			}
 		},
 		components:{
 			NavBar,
+			GoodsList
 		}
 	}
 </script>

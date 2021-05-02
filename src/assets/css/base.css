@@ -27,3 +27,8 @@ a {
 	color: var(--color-text);
 	text-decoration: none;
 }
+
+img{
+	max-width: 100% !important;
+	height: 100% !important;
+}

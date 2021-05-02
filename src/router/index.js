@@ -4,6 +4,7 @@ const Category = () => import ("views/category/Category")
 const ShopCart = () => import ("views/shopcart/ShopCart")
 const User = () => import ("views/user/User")
 const Details = () => import("views/details/Details")
+const Register = () => import("views/user/Register")
 const routes = [
 	{
 		path: '',
@@ -46,7 +47,15 @@ const routes = [
 		meta:{
 			title: 'N7wQ-商品详情'
 		}		
-	},	
+	},
+	{
+		path: '/register',
+		component: Register,
+		meta:{
+			title: 'N7wQ-用户注册'
+		}		
+	},
+
 ]
 
 const router = createRouter({

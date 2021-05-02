@@ -14,13 +14,10 @@
 					<div class="banners">
 						<home-swiper :slides='slides'></home-swiper>
 					</div>
-	
 					<recommend-view :recommends='recommends'></recommend-view>
 				</div>	
 					<tab-control @tabClick='tabClick' :titles="['畅销','精选','新书']	"></tab-control>					
-
 				<GoodsList :goods='showGoods'></GoodsList>
-	
 			</div>
 		</div>
 		

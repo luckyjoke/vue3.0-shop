@@ -48,7 +48,6 @@
 		img{
 			width: 	80px;
 			height: 80px;
-			margin-bottom: 10px;
 		}
 	}
 </style>
