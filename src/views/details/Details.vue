@@ -9,7 +9,23 @@
 			lazy-load
 			:src="detail.cover_url"
 			@click = 'openImage(detail.cover_url)'
-		/>		
+		/>
+		<van-card
+			style='text-align: left;'
+			:num="detail.stock"
+			:price="detail.price"
+			:desc="detail.description"
+			:title="detail.title"
+		>
+			<template #tags>
+				<van-tag plain type="danger">畅销</van-tag>
+				<van-tag plain type="danger">新书</van-tag>
+			</template>
+			<template #footer>
+				<van-button  type="warning">加入购物车</van-button>
+				<van-button type="danger">立即购买</van-button>
+			</template>
+		</van-card>				
 	</div>
 </template>
 
