@@ -23,8 +23,13 @@ export function request(config) {
 		return res.data ? res.data : res;
 	} , err => {
 		// 如果有错误会处理
+		console.log(err.response)
+		if (!err.response.data.errors) {
+			Notify({type: 'warning' , message: '邮箱或者密码错误'})
+		}else{
 		Notify({type: 'warning' ,
-			message: err.response.data.errors[Object.keys(err.response.data.errors)[0]][0]})
+			message: err.response.data.errors[Object.keys(err.response.data.errors)[0]][0]})			
+		}
 	})
 
 

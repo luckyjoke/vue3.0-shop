@@ -8,7 +8,7 @@
 
 		<div class="maxbox">
 			<div class="centerbox">
-				<h1>Sign up</h1>
+				<h1>Sign Up</h1>
 				<van-form @submit="onSubmit">
 					<van-field
 						v-model="state.name"
@@ -41,9 +41,12 @@
 						:rules="[{ required: true, message: '请确认密码' }]"
 						/>
 					<div style="margin: 16px;">
-					<van-button round block type="primary" native-type="submit">
-						提交
-					</van-button>
+						<div class="link-login" @click='router.push({path:"/login"})'>
+							已有账号，立即登录
+						</div>
+						<van-button round block type="primary" native-type="submit">
+							提交
+						</van-button>
 					</div>
 				</van-form>				
 			</div>
@@ -89,9 +92,11 @@
 					})
 				}
 			};
+
 			return {
 				state,
 				onSubmit,
+				router
 			};
 		},
 		components:{
@@ -107,5 +112,10 @@
 			padding-top:50px;
 			text-align: center;
 		}
+	}
+	.link-login{
+		margin-bottom: 10px;
+		color: var(--color-tint);
+		font-size: var(--font-size);
 	}
 </style>

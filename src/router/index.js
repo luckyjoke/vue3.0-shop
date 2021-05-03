@@ -5,6 +5,7 @@ const ShopCart = () => import ("views/shopcart/ShopCart")
 const User = () => import ("views/user/User")
 const Details = () => import("views/details/Details")
 const Register = () => import("views/user/Register")
+const Login = () => import("views/user/Login")
 const routes = [
 	{
 		path: '',
@@ -55,6 +56,13 @@ const routes = [
 			title: 'N7wQ-用户注册'
 		}		
 	},
+	{
+		path: '/login',
+		component: Login,
+		meta:{
+			title: 'N7wQ-用户登录'
+		}		
+	},	
 
 ]
 
