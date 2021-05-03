@@ -41,14 +41,15 @@
 
 <script>
 	import NavBar from 'components/common/navbar/NavBar'
-	// import { Notify } from 'vant'
 	import { Toast } from 'vant';	
 	import { login } from 'network/user'
 	import { reactive } from 'vue'
 	import { useRouter } from 'vue-router'
+	import { useStore } from 'vuex'
 	export default{
 		setup(){
 			const router = useRouter()
+			const store = useStore()
 			const state = reactive({
 				email: '',
 				password: '',
@@ -58,12 +59,13 @@
 					window.localStorage.setItem('token' , res.access_token)
 					Toast.success('登录成功')
 
+					store.commit('setIsLogin' , true)
 
 					state.email = ''
 					state.password = ''
 
 					setTimeout(()=>{
-						router.go(-1)	
+						router.push({path:'/user'})	
 					},500)
 				})
 			};
