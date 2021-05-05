@@ -25,6 +25,13 @@ const routes = [
 		}		
 	},
 	{
+		path: '/home',
+		component: Home,
+		meta:{
+			title: 'N7wQ-首页'
+		}		
+	},	
+	{
 		path: '/category',
 		component: Category,
 		meta:{
