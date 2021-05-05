@@ -1,8 +1,8 @@
 <template>
-	<nav-bar>
-		<template v-slot:default>购物车</template>
-	</nav-bar>
-	<div>	
+	<div>
+		<nav-bar>
+			<template v-slot:default>购物车</template>
+		</nav-bar>		
 	</div>
 </template>
 

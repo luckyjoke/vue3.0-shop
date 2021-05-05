@@ -20,7 +20,7 @@
     </router-link>
     <router-link to='/shopcart' class='tab-bar-item'>
       <div class="icon">
-          <van-badge :content="5" max="9" color='#F24405'>
+          <van-badge :content="$store.state.cartCount" max="9" color='#F24405'>
             <i class="iconfont icon-gouwuche2"></i>
           </van-badge>        
       </div>
@@ -34,10 +34,15 @@
 </template>
 
 <script>
-  // import { onMounted } from 'vue'
+  import { onMounted } from 'vue'
+  import { useStore } from 'vuex' 
   // import { request } from 'network/request'
   export default{
     setup(){
+      const store = useStore()
+      onMounted(()=>{
+        store.dispatch('updateCart')
+      })
     }
   }
 </script>
@@ -62,7 +67,7 @@
   right: 0;
   bottom: 0; 
   box-shadow: 0 -3px 1px rgba(100,100,100,0.1);
-
+  z-index: 20;
   a {
     font-weight: bold;
     color: var(--color-text);

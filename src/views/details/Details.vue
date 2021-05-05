@@ -22,8 +22,8 @@
 				<van-tag plain type="danger">新书</van-tag>
 			</template>
 			<template #footer>
-				<van-button  type="warning">加入购物车</van-button>
-				<van-button type="danger">立即购买</van-button>
+				<van-button  type="warning" @click='handleAddCart'>加入购物车</van-button>
+				<van-button type="danger" @click='goToCart'>立即购买</van-button>
 			</template>
 		</van-card>
 		<van-tabs v-model:active="active">
@@ -47,12 +47,17 @@
 	import GoodsList from 'components/content/goods/GoodsList'	
 	import { getDetail } from 'network/detail'
 	import {  ref , onMounted , reactive , toRefs} from 'vue'
-	import { useRoute } from 'vue-router'
-	import { ImagePreview } from "vant";
+	import { useRoute , useRouter} from 'vue-router'
+	import { ImagePreview } from "vant"
+	import {  addCart } from 'network/cart'
+	import { Toast } from 'vant'
+	import { useStore} from 'vuex'
 	export default{
 		setup(){
 			const route = useRoute()
+			const router = useRouter()
 			const goodId = ref(0)
+			const store = useStore()
 			let active = ref(0)
 			goodId.value = route.query.id
 
@@ -77,11 +82,42 @@
 				})
 			}
 
+			// 加入购物车 点击事件
+			const handleAddCart = () => {
+				addCart({
+					goods_id: book.detail.id,
+					num: 1
+				}).then(res => {
+					if (res.status == 201 || res.status == 204) {
+						Toast.success('添加购物车成功')
+						store.dispatch('updateCart')
+					}
+				})
+				// console.log(book.detail)
+			}
+			// 立即购买 点击事件
+			const goToCart = () => {
+				addCart({
+					goods_id: book.detail.id,
+					num: 1
+				}).then(res => {
+					if (res.status == 201 || res.status == 204) {
+						Toast.success('添加购物车成功，前往购物车界面')
+
+						store.dispatch('updateCart')
+						setTimeout(()=>{
+							router.push({path:'/shopcart'})	
+						},500)
+					}
+				})				
+			}
 			return{
 				goodId,
 				...toRefs(book),
 				openImage,
-				active
+				active,
+				handleAddCart,
+				goToCart
 			}
 		},
 		components:{
