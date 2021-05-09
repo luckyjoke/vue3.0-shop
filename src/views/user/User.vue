@@ -15,23 +15,23 @@
 		</div>
 
 		<ul class="user-list">
-			<li class="van-hairline--bottom">
+			<li class="van-hairline--bottom" @click='goTo("/collect")'>
 				<span>我的收藏</span>
 				<van-icon name='arrow' />
 			</li>
-			<li class="van-hairline--bottom">
+			<li class="van-hairline--bottom" @click='goTo("/order")'>
 				<span>我的订单</span>
 				<van-icon name='arrow' />
 			</li>
-			<li class="van-hairline--bottom">
+			<li class="van-hairline--bottom" @click='goTo("/setting")'>
 				<span>账号管理</span>
 				<van-icon name='arrow' />
 			</li>
-			<li class="van-hairline--bottom">
+			<li class="van-hairline--bottom" @click='goTo("/address")'>
 				<span>地址管理</span>
 				<van-icon name='arrow' />
 			</li>
-			<li class="van-hairline--bottom">
+			<li class="van-hairline--bottom" @click='goTo("/about")'>
 				<span>关于我们</span>
 				<van-icon name='arrow' />
 			</li>
@@ -76,16 +76,21 @@
 			const init = () => {
 				userDetails().then(res=>{
 					userInfo.info = res
-					console.log(userInfo.info)
 				})
 			}
 			onMounted(()=>{
 				init()
 			})
+
+
+			const goTo = ( path , query) => {
+				router.push({path , query: query || {}})
+			}
 			return{
 				logOut,
 				userInfo,
-				...toRefs(userInfo)
+				...toRefs(userInfo),
+				goTo
 			}
 		},
 		components:{

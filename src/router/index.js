@@ -6,6 +6,7 @@ const User = () => import ("views/user/User")
 const Details = () => import("views/details/Details")
 const Register = () => import("views/user/Register")
 const Login = () => import("views/user/Login")
+const AccountSetting = () => import("views/user/UserSetting/AccountSetting")
 import store from '../store'
 import { Notify } from 'vant'
 
@@ -74,7 +75,14 @@ const routes = [
 		meta:{
 			title: 'N7wQ-用户登录'
 		}		
-	},	
+	},
+	{
+		path: '/setting',
+		component: AccountSetting,
+		meta:{
+			title: 'N7wQ-账户管理'
+		}		
+	},		
 
 ]
 

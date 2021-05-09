@@ -23,8 +23,19 @@ export function logout() {
 	})
 }
 
+// 用户信息详情
 export function  userDetails(){
 	return request({
 		url:'/api/user'
+	})
+}
+
+
+// 修改用户信息
+export function userInfoSetting(data){
+	return request({
+		url: '/api/user',
+		method: 'put',
+		data
 	})
 }
