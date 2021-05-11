@@ -32,3 +32,12 @@ img{
 	max-width: 100% !important;
 	height: 100% !important;
 }
+
+.van-address-list__bottom{
+	bottom:55px !important;
+	border:10px solid #FFFFFF;
+}
+
+.address-item .van-radio__icon{
+	display: none;
+}

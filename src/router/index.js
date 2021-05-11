@@ -7,6 +7,8 @@ const Details = () => import("views/details/Details")
 const Register = () => import("views/user/Register")
 const Login = () => import("views/user/Login")
 const AccountSetting = () => import("views/user/UserSetting/AccountSetting")
+const Address = () => import("views/user/Address/Address")
+const AddressEdit = () => import("views/user/Address/AddressEdit")
 import store from '../store'
 import { Notify } from 'vant'
 
@@ -80,9 +82,26 @@ const routes = [
 		path: '/setting',
 		component: AccountSetting,
 		meta:{
-			title: 'N7wQ-账户管理'
+			title: 'N7wQ-账户管理',
+			isAuthRequired: true,
 		}		
-	},		
+	},
+	{
+		path: '/address',
+		component: Address,
+		meta:{
+			title: 'N7wQ-地址管理',
+			isAuthRequired: true,
+		}		
+	},
+	{
+		path: '/addressedit',
+		component: AddressEdit,
+		meta:{
+			title: 'N7wQ-编辑地址',
+			isAuthRequired: true,
+		}		
+	},					
 
 ]
 

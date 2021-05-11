@@ -31,11 +31,20 @@ export function  userDetails(){
 }
 
 
-// 修改用户信息
+// 修改用户名
 export function userInfoSetting(data){
 	return request({
 		url: '/api/user',
 		method: 'put',
+		data
+	})
+}
+
+// 修改用户头像
+export function userAvatar(data){
+	return request({
+		url: '/api/user/avatar',
+		method: 'patch',
 		data
 	})
 }

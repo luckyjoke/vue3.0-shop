@@ -10,7 +10,7 @@
 			label="新昵称"
 			placeholder="新昵称"
 			:rules="[{ required: true, message: '请填写新昵称' }]"
-			/>
+			/>		
 		<div style="margin: 16px;">
 			<van-button round block type="primary" native-type="submit">
 				提交
@@ -22,7 +22,7 @@
 
 <script>
 	import NavBar from 'components/common/navbar/NavBar'
-	import {userInfoSetting} from 'network/user'
+	import {userInfoSetting } from 'network/user'
 	import { Notify } from 'vant'
 	import { Dialog } from 'vant'
 	import { Toast } from 'vant'	
@@ -36,8 +36,9 @@
 				name: '',
 			});
 			const onSubmit = () => {
-				if (!state.name.trim().length) {
+				if (!state.name.trim().length ) {
 					state.name = ''
+
 					Notify({ type: 'warning', message: '新昵称不能为空🤔' ,
 					duration: 1000,});					
 				}else{
