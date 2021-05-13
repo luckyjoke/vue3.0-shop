@@ -9,6 +9,8 @@ const Login = () => import("views/user/Login")
 const AccountSetting = () => import("views/user/UserSetting/AccountSetting")
 const Address = () => import("views/user/Address/Address")
 const AddressEdit = () => import("views/user/Address/AddressEdit")
+const CreateOrder = () => import("views/order/CreateOrder")
+const OrderDetai = () => import("views/order/OrderDetail")
 import store from '../store'
 import { Notify } from 'vant'
 
@@ -101,7 +103,24 @@ const routes = [
 			title: 'N7wQ-编辑地址',
 			isAuthRequired: true,
 		}		
-	},					
+	},
+	{
+		path: '/createorder',
+		component: CreateOrder,
+		meta:{
+			title: 'N7wQ-订单预览',
+			isAuthRequired: true,
+		}		
+	},
+	{
+		path: '/orderdetail',
+		component: OrderDetai,
+		meta:{
+			title: 'N7wQ-订单详情',
+			isAuthRequired: true,
+		}		
+	},				
+				
 
 ]
 

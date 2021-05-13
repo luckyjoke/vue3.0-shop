@@ -8,7 +8,7 @@
 				<img  :src='info.avatar_url'>
 				<div class="user-desc">
 					<span>昵称： {{info.name}}</span>
-					<span>登录名字： {{info.email}}</span>
+					<span>邮箱： {{info.email}}</span>
 					<span class="name">个性签名： 帅就完事了</span>
 				</div>
 			</div>

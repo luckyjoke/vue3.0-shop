@@ -45,6 +45,11 @@
 
 				if (type == 'edit') {
 					//  初始化信息
+					Toast.loading({
+					message: '加载中...',
+					forbidClick: true,
+					duration: 500,
+					});					
 					getAddressDetail(addressId).then( res => {
 						const addressDetail = res
 						state.addressInfo = {
