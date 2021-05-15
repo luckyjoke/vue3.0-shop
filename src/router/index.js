@@ -12,6 +12,7 @@ const AddressEdit = () => import("views/user/Address/AddressEdit")
 const CreateOrder = () => import("views/order/CreateOrder")
 const OrderDetai = () => import("views/order/OrderDetail")
 const MyOrder = () => import("views/order/MyOrder")
+const Collection = () => import("views/user/Collection/Collection")
 import store from '../store'
 import { Notify } from 'vant'
 
@@ -89,6 +90,14 @@ const routes = [
 			isAuthRequired: true,
 		}		
 	},
+	{
+		path: '/collect',
+		component: Collection,
+		meta:{
+			title: 'N7wQ-我的收藏',
+			isAuthRequired: true,
+		}		
+	},	
 	{
 		path: '/order',
 		component: MyOrder,

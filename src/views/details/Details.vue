@@ -22,6 +22,8 @@
 				<van-tag plain type="danger">新书</van-tag>
 			</template>
 			<template #footer>
+				<van-button  type="warning" v-show='showCollect' @click='collectionGoods'>取消收藏</van-button>				
+				<van-button  type="warning" v-show='!showCollect' @click='collectionGoods'>收藏</van-button>				
 				<van-button  type="warning" @click='handleAddCart'>加入购物车</van-button>
 				<van-button type="danger" @click='goToCart'>立即购买</van-button>
 			</template>
@@ -46,7 +48,8 @@
 	import NavBar from 'components/common/navbar/NavBar'
 	import GoodsList from 'components/content/goods/GoodsList'	
 	import { getDetail } from 'network/detail'
-	import {  ref , onMounted , reactive , toRefs} from 'vue'
+	import { collectionWithCancel , myCollection } from 'network/collection'
+	import {  ref , onMounted , reactive , toRefs } from 'vue'
 	import { useRoute , useRouter} from 'vue-router'
 	import { ImagePreview } from "vant"
 	import {  addCart } from 'network/cart'
@@ -59,6 +62,7 @@
 			const goodId = ref(0)
 			const store = useStore()
 			let active = ref(0)
+			const showCollect = ref(false)
 			goodId.value = route.query.id
 
 			// 商品详情数据模型
@@ -71,6 +75,14 @@
 				getDetail(goodId.value).then(res => {
 					book.detail = res.goods
 					book.like_goods = res.like_goods
+				})
+
+				myCollection().then(res=> {
+					res.data.forEach(item => {
+						if (item.goods_id == book.detail.id) {
+							showCollect.value = !showCollect.value
+						}
+					})
 				})
 
 
@@ -111,13 +123,27 @@
 					}
 				})				
 			}
+
+			// 收藏 点击事件
+			const collectionGoods = () => {
+				collectionWithCancel(book.detail.id).then(res=>{
+					if (res.status == 201) {
+						Toast('收藏成功')
+					}else{
+						Toast('取消收藏成功')
+					}
+					showCollect.value = !showCollect.value
+				})
+			}
 			return{
 				goodId,
 				...toRefs(book),
 				openImage,
 				active,
 				handleAddCart,
-				goToCart
+				goToCart,
+				collectionGoods,
+				showCollect
 			}
 		},
 		components:{
