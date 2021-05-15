@@ -38,6 +38,15 @@ export function getOrderList(params) {
 	})
 }
 
+// 确认订单
+export function confirmorder(order) {
+	return request({
+		url:`/api/orders/${order}/confirm`,
+		method: 'patch'
+	})
+}
+
+
 // 订单支付获取二维码
 export function getOrderPay(order , params){
 	return request({
