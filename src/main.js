@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import 'vant/lib/index.css';
-
+import 'vant/lib/index.css'
+import 'animate.css/animate.min.css'
 import { Swipe, SwipeItem , Icon , Lazyload , Badge , Sidebar, SidebarItem ,Collapse, 
 		CollapseItem, Tab, Tabs , Card , Image as VanImage , Tag , Button , Form , 
 		Field , Toast ,  Checkbox, CheckboxGroup , SwipeCell , Stepper , SubmitBar, 

@@ -85,7 +85,6 @@
 
 				getOrderDetails(id).then(res=>{
 					state.detail = res
-					console.log(res)
 				})
 			}
 

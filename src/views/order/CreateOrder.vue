@@ -80,14 +80,12 @@
 						duration: 500,
 					});					
 					const  defaultAdress = res.address.filter(item => {return item.is_default == 1})
-					console.log(defaultAdress)
 					if (defaultAdress.length == 0) {
 						state.address.address = '还没有默认地址，去往设置'
 					}else{
 						state.address = defaultAdress[0]
 					}
 					state.carts = res.carts
-					console.log(state.carts)
 				})
 			}
 			onMounted( ()=> {

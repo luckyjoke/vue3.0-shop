@@ -41,15 +41,17 @@
 				</div>					
 				</van-list>
 			</van-pull-refresh>			
-		</div>					
+		</div>
+		<back-top @bTop='bTop' ></back-top>					
 	</div>
 </template>
 
 <script>
 	import NavBar from 'components/common/navbar/NavBar'
-	import { reactive , onMounted , toRefs} from 'vue'
+	import BackTop from 'components/common/backtop/BackTop'
+	import { reactive , onMounted , toRefs } from 'vue'
 	import { getOrderList } from 'network/order'
-	import {  useRouter} from 'vue-router'	
+	import {  useRouter} from 'vue-router'
 	export default{
 		setup(){
 			const router = useRouter()
@@ -79,7 +81,6 @@
 							state.finished = true
 						}
 
-						console.log(state.page);
 						
 				})
 			}
@@ -117,17 +118,27 @@
 
 			const goTo = (id) => {
 				router.push({path:'/orderdetail' ,query:{id}})
+			}
+
+
+			const bTop = () => {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
 			}						
 			return{
 				...toRefs(state),
 				onLoad,
 				onRefresh,
 				onChangeTab,
-				goTo				
+				goTo,
+				bTop				
 			}
 		},
 		components:{
-			NavBar
+			NavBar,
+			BackTop
 		}			
 	}
 </script>

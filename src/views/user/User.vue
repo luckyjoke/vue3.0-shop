@@ -32,7 +32,7 @@
 				<van-icon name='arrow' />
 			</li>
 			<li class="van-hairline--bottom" @click='goTo("/about")'>
-				<span>关于我们</span>
+				<span>关于作者</span>
 				<van-icon name='arrow' />
 			</li>
 		</ul>

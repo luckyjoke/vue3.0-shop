@@ -13,6 +13,7 @@ const CreateOrder = () => import("views/order/CreateOrder")
 const OrderDetai = () => import("views/order/OrderDetail")
 const MyOrder = () => import("views/order/MyOrder")
 const Collection = () => import("views/user/Collection/Collection")
+const AboutUs = () => import("views/user/AboutUs/AboutUs")
 import store from '../store'
 import { Notify } from 'vant'
 
@@ -114,6 +115,14 @@ const routes = [
 			isAuthRequired: true,
 		}		
 	},
+	{
+		path: '/about',
+		component: AboutUs,
+		meta:{
+			title: 'N7wQ-关于我的',
+			isAuthRequired: true,
+		}		
+	},		
 	{
 		path: '/addressedit',
 		component: AddressEdit,

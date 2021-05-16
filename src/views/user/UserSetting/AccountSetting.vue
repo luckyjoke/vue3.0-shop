@@ -35,6 +35,7 @@
 			const state = reactive({
 				name: '',
 			});
+
 			const onSubmit = () => {
 				if (!state.name.trim().length ) {
 					state.name = ''

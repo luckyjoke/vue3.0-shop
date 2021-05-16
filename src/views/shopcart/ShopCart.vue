@@ -90,7 +90,6 @@
 			const total = computed( () => {
 				let sum = 0
 				let totalArr = state.list.filter(item => state.result.includes(item.id))
-				console.log(totalArr)
 				totalArr.forEach(item => {
 					sum+= item.num * item.goods.price
 				})
@@ -113,8 +112,6 @@
 
 			// 复选框改变选择处理事件
 			const groupChange = (result) => {
-				console.log(result)
-				console.log(state.result)
 				if (result.length == state.list.length) {
 					state.checkAll = true
 				}else{
@@ -124,7 +121,6 @@
 			}
 
 			const allCheck = () => {
-				console.log(state.checkAll)
 				if (state.checkAll == true) {
 					state.result = state.list.map(item => item.id)
 				}else{
