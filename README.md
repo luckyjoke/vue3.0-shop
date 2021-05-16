@@ -1,24 +1,8 @@
-# vue3.0-shop
+# Vue3.0-shop
+Vue3.0 + Vuex + Vue-router + Vant 前台商城系统
 
-## Project setup
-```
-npm install
-```
+该系统包含 商品首页、商品分类、首页轮播、商品详情、商品收藏、购物车、订单结算、订单详情、订单流程、个人订单管理、个人商品收藏管理、个人账号管理、个人地址管理、用户注册与用户登录等模块
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+👀线上预览地址：http://120.79.156.58/
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+🈲项目仅供学习与交流
