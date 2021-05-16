@@ -6,3 +6,5 @@ Vue3.0 + Vuex + Vue-router + Axios + Vant 前台商城系统 <br>
 👀线上预览地址：http://120.79.156.58/   账号可以自行注册 <br/>
 📫zhangweiquan7@foxmail.com <br/>
 🈲项目仅供学习与交流
+
+##  效果预览
