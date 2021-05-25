@@ -8,8 +8,21 @@ Vue3.0 + Vuex + Vue-router + Axios + Vant 前台商城系统 <br>
 🈲项目仅供学习与交流
 
 ##  效果预览
+
+- 登录页 <br/>
 ![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.PNG?raw=true) 
-![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E9%A6%96%E9%A1%B5.PNG?raw=true) <br/>
-![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E5%88%86%E7%B1%BB.PNG?raw=true)
-![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E8%B4%AD%E7%89%A9%E8%BD%A6.PNG?raw=true)
-![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG?raw=true)
+- 首页 <br/>
+- 商品详情页 <br/>
+- 购物车 <br/>
+- 生成订单 <br/>
+- 地址管理 <br/>
+- 订单列表 <br/>
+- 订单详情 <br/>
+
+## 感谢
+- Vue
+- Vue-router
+- Vant
+- better-scroll
+- Axios
+
