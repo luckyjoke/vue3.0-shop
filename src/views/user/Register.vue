@@ -70,8 +70,7 @@
 				password: '',
 				password_confirmation: '',
 			});
-			const onSubmit = (values) => {
-				console.log('submit', values);
+			const onSubmit = () => {
 				// 先验证 
 				if (state.password != state.password_confirmation) {
 					Notify({ type: 'warning', message: '两次密码不一致🤔' ,

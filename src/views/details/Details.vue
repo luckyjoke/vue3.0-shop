@@ -50,7 +50,7 @@
 	import { getDetail } from 'network/detail'
 	import { collectionWithCancel , myCollection } from 'network/collection'
 	import {  ref , onMounted , reactive , toRefs  } from 'vue'
-	import { useRoute , useRouter , onBeforeRouteUpdate} from 'vue-router'
+	import { useRoute , useRouter , onBeforeRouteUpdate } from 'vue-router'
 	import { ImagePreview } from "vant"
 	import {  addCart } from 'network/cart'
 	import { Toast } from 'vant'
@@ -70,13 +70,8 @@
 				detail:{},
 				like_goods: [],
 			})
-
-			// 监听路由参数变化 并更新页面
-			onBeforeRouteUpdate( () =>{
-				router.go(0)
-			})	
 		
-			onMounted(()=>{
+			const init = () => {
 				getDetail(goodId.value).then(res => {
 					book.detail = res.goods
 					book.like_goods = res.like_goods
@@ -88,8 +83,21 @@
 							showCollect.value = !showCollect.value
 						}
 					})
-				})
+				})				
+			}
 
+			// 监听路由变化 更新组件
+			onBeforeRouteUpdate( (to) =>{
+				if ( to.query.id != route.query.id) {
+					goodId.value = to.query.id
+					Toast.loading('加载中')
+					init()
+					Toast.clear()
+				}
+			})				
+			onMounted(()=>{
+
+				init()
 
 			})
 			const openImage = (images) => {

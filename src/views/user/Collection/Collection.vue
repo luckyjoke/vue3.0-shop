@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<nav-bar>
-			<template v-slot:default>我的订单</template>
+			<template v-slot:default>我的收藏</template>
 		</nav-bar>
 		<div class="item-box">
 		<van-card

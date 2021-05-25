@@ -63,6 +63,7 @@
 
 						setTimeout(()=>{
 							router.push({path:'/login'})	
+							router.go(0)
 						},500)
 					}
 				})
