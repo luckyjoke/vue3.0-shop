@@ -10,14 +10,16 @@ Vue3.0 + Vuex + Vue-router + Axios + Vant 前台商城系统 <br>
 ##  效果预览
 
 - 登录页 <br/>
-![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.PNG?raw=true) 
+  ![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.PNG?raw=true) 
 - 首页 <br/>
+- 商品分类 <br/>
 - 商品详情页 <br/>
 - 购物车 <br/>
 - 生成订单 <br/>
 - 地址管理 <br/>
 - 订单列表 <br/>
 - 订单详情 <br/>
+- 个人中心 <br/>
 
 ## 感谢
 - Vue
