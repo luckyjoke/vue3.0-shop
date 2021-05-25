@@ -32,9 +32,9 @@ Vue3.0 + Vuex + Vue-router + Axios + Vant 前台商城系统 <br>
   ![image](https://github.com/luckyjoke/ReadmeImg/blob/master/vue3.0-shop/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG?raw=true)
 
 ## 感谢
-- Vue
-- Vue-router
-- Vant
-- better-scroll
-- Axios
+- [Vue](https://github.com/vuejs/vue)
+- [Vue-router](https://github.com/vuejs/vue-router)
+- [Vant](https://github.com/youzan/vant)
+- [better-scroll](https://github.com/ustbhuangyi/better-scroll)
+- [Axios](https://github.com/axios/axios)
 
